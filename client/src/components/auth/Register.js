@@ -3,21 +3,19 @@ import * as yup from 'yup';
 import axios from 'axios';
 import styled from 'styled-components';
 
-//Establish initial states here
-
-// const initialFormValues = {
-//     name: '',
-//     email: '',
-//     password: '',
-// }
 
 
 // yup validation here
+
 const formSchema = yup.object().shape({
     name: yup
         .string()
         .required("Please enter your name.")
         .min(2, "Please enter a name longer than 2 characters."),
+    username: yup
+        .string()
+        .min(2, "Username must be at least 2 characters long.")
+        .required("Username is required."),
     email: yup
         .string()
         .email("Must be a valid email address.")
@@ -28,12 +26,13 @@ const formSchema = yup.object().shape({
         .required("Must include password."),
 });
 
-//Register Form
+// Register Form
 
 export default function Register() {
     const [buttonDisabled, setDisabled] = useState(true)
     const [formState, setFormState] = useState({
         name: "",
+        username: "",
         email: "",
         password: "",
     });
@@ -48,16 +47,17 @@ export default function Register() {
 
     const [errors, setErrors] = useState({
         name: "",
+        username: "",
         email: "",
         password: "",        
     });
-    console.log(errors)
+    //console.log(errors)
 
     const validateChange = event => {
         yup
         .reach(formSchema, event.target.name)
         .validate(event.target.value)
-        .then(valid => {
+        .then(() => {
             setErrors({
                 ...errors,
                 [event.target.name]:""
@@ -65,7 +65,7 @@ export default function Register() {
         })
         .catch(err => {
             setErrors({
-                errors,
+                ...errors,
                 [event.target.name]: err.errors[0]
             });
         });
@@ -73,19 +73,20 @@ export default function Register() {
 
     const onSubmit = event => {
         event.preventDefault();
+        console.log("Registration successful!")
         axios.post("https://reqres.in/api/article", formState)
-            .then(response => {
-                console.log("response", response.data)
+            .then(response => { 
                 setPost([...post, response.data]);
                 setFormState({
                     name:"",
                     email: "",
                     password: "",
             })
+            console.log("Response", response.data)
      
             })
             .catch(err => {
-                console.log("Error", err)
+                console.log("Error", err.response)
             })
     }
 
@@ -107,6 +108,7 @@ export default function Register() {
                 <h1>Register Here</h1>
                 <div className="error">
                     <div>{errors.name}</div>
+                    <div>{errors.username}</div>
                     <div>{errors.email}</div>
                     <div>{errors.password}</div>
                 </div>
@@ -118,6 +120,16 @@ export default function Register() {
                         type="text"
                         value={formState.name}
                         onChange={onInputChange}
+                        placeholder="Enter your name here"
+                        />
+                    </label>
+                    <label>Username:
+                        <input 
+                        type="text"
+                        name="username"
+                        value={formState.username}
+                        onChange={onInputChange}
+                        placeholder="Enter username here"
                         />
                     </label>
                     <label htmlFor="emailInput">Email:
@@ -127,6 +139,7 @@ export default function Register() {
                             name="email"
                             value={formState.email}
                             onChange={onInputChange}
+                            placeholder="Enter email here"
                             />
                     </label>
                     <label htmlFor="passwordInput">Password:
@@ -135,10 +148,13 @@ export default function Register() {
                             name="password"
                             value={formState.password}
                             onChange={onInputChange}
+                            placeholder="Enter password here"
                             />
                     </label>
                 </div>
-                <button disabled={buttonDisabled}>Submit</button>
+                <button disabled={buttonDisabled}>Register Now!</button>
+                {/* <p>Already have an account?</p>
+                <button>Login Here</button> */}
             </div>
         </form>
        
