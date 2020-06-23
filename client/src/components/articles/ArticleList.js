@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ArticleCard } from './ArticleCard'
+import dummyData from './dummy-data'
 
-export const ArticleList = () => {
+export const ArticleList = () => { 
+    const [articleData, setArticleData] = useState(dummyData);
+
     return (
-        <div>
-            <ArticleCard />
-            <ArticleCard />
-            <ArticleCard />
-            <ArticleCard />
+        <div className="article-list">
+            {articleData.map(article => (
+                <ArticleCard 
+                    key = {article.article_name} article={article}
+                />
+            ))}
         </div>
     )
 }
+
+export default ArticleList;
