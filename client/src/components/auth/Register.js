@@ -4,8 +4,6 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 
-
-
 // yup validation here
 
 const formSchema = yup.object().shape({
@@ -104,17 +102,17 @@ export default function Register() {
 
     return (
     <div>     
-        <form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit}>
             <div>
                 <h1>Register Here</h1>
                 <div className="error">
-                    <div>{errors.name}</div>
-                    <div>{errors.username}</div>
-                    <div>{errors.email}</div>
-                    <div>{errors.password}</div>
+                    <Error>{errors.name}</Error>
+                    <Error>{errors.username}</Error>
+                    <Error>{errors.email}</Error>
+                    <Error>{errors.password}</Error>
                 </div>
                 <div className="registerFormInputs">
-                    <label>Name:
+                    <label>Name:&nbsp;
                         <input
                         id="name"
                         name="name"
@@ -124,7 +122,9 @@ export default function Register() {
                         placeholder="Enter your name here"
                         />
                     </label>
-                    <label>Username:
+                    <br/>
+                    <br/>
+                    <label>Username:&nbsp;
                         <input 
                         type="text"
                         name="username"
@@ -133,7 +133,9 @@ export default function Register() {
                         placeholder="Enter username here"
                         />
                     </label>
-                    <label htmlFor="emailInput">Email:
+                    <br/>
+                    <br/>
+                    <label htmlFor="emailInput">Email:&nbsp;
                         <input
                             id="emailInput"
                             type="email"
@@ -143,7 +145,9 @@ export default function Register() {
                             placeholder="Enter email here"
                             />
                     </label>
-                    <label htmlFor="passwordInput">Password:
+                    <br/>
+                    <br/>
+                    <label htmlFor="passwordInput">Password:&nbsp;
                         <input
                             type="password"
                             name="password"
@@ -153,16 +157,46 @@ export default function Register() {
                             />
                     </label>
                 </div>
-                <button disabled={buttonDisabled}>Register Now!</button>
+                <Button disabled={buttonDisabled}>Register Now!</Button>
                 {/* <p>Already have an account?</p>
                 <button>Login Here</button> */}
             </div>
-        </form>
+        </Form>
        
     <pre>{JSON.stringify(post, null)}</pre>
     </div>
     );
 };    
 
+// Styling 
+const Error = styled.div`
+    color: #FF5733;
+    font-size: .85rem;
+    padding: 1%;
+`;
+
+const Form = styled.form`
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 3% 0;
+    margin: 3% 15%;
+`;
+
+const Input = styled.input`
+font-size: .85rem;
+padding: 1%;
+font-family: 'Roboto', sans-serif;
+`;
+
+const Button = styled.button`
+    color: white;
+    background-color: #FF5733;
+    padding: 1% 4%;
+    margin: 2%;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    `;
 
 
