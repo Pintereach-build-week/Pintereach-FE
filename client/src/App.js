@@ -7,9 +7,11 @@ import { Catergory } from './components/category/Catergory';
 function App() {
   return (
     <div className="App">
+
       <Navbar/>
       <Catergory />
       <ArticleList/>
+
     </div>
   );
 }
