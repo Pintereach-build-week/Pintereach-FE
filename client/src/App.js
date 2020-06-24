@@ -2,7 +2,6 @@ import React from 'react';
 import { Navbar } from './components/navbar/Navbar';
 import { ArticleList } from './components/articles/ArticleList';
 import { Catergory } from './components/category/Catergory';
-import Register from './components/auth/Register'
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
       <Navbar/>
       <Catergory />
       <ArticleList />
-      <Register />
     </div>
   );
 }
