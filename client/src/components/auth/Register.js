@@ -105,6 +105,7 @@ export default function Register() {
         <Form onSubmit={onSubmit}>
             <div>
                 <h1>Register Here</h1>
+                <CalltoAction><h4>Please fill out form below</h4></CalltoAction>
                 <div className="error">
                     <Error>{errors.name}</Error>
                     <Error>{errors.username}</Error>
@@ -112,8 +113,8 @@ export default function Register() {
                     <Error>{errors.password}</Error>
                 </div>
                 <div className="registerFormInputs">
-                    <label>Name:&nbsp;
-                        <input
+                    <label> Name:&nbsp;
+                        <Input
                         id="name"
                         name="name"
                         type="text"
@@ -125,7 +126,7 @@ export default function Register() {
                     <br/>
                     <br/>
                     <label>Username:&nbsp;
-                        <input 
+                        <Input 
                         type="text"
                         name="username"
                         value={formState.username}
@@ -136,7 +137,7 @@ export default function Register() {
                     <br/>
                     <br/>
                     <label htmlFor="emailInput">Email:&nbsp;
-                        <input
+                        <Input
                             id="emailInput"
                             type="email"
                             name="email"
@@ -148,7 +149,7 @@ export default function Register() {
                     <br/>
                     <br/>
                     <label htmlFor="passwordInput">Password:&nbsp;
-                        <input
+                        <Input
                             type="password"
                             name="password"
                             value={formState.password}
@@ -157,9 +158,9 @@ export default function Register() {
                             />
                     </label>
                 </div>
-                <Button disabled={buttonDisabled}>Register Now!</Button>
-                {/* <p>Already have an account?</p>
-                <button>Login Here</button> */}
+                <Button disabled={buttonDisabled}
+                type="submit"
+                >Register Now!</Button>
             </div>
         </Form>
        
@@ -187,6 +188,7 @@ const Form = styled.form`
 const Input = styled.input`
 font-size: .85rem;
 padding: 1%;
+width: 200px;
 font-family: 'Roboto', sans-serif;
 `;
 
@@ -199,4 +201,6 @@ const Button = styled.button`
     border-radius: 3px;
     `;
 
-
+const CalltoAction = styled.h4`
+color:#FF5733;
+`;
