@@ -1,6 +1,8 @@
 import React from 'react'
-// import styled from 'styled-components'
-// import { Link } from "react-router-dom"
+
+import styled from 'styled-components'
+import { Link } from "react-router-dom"
+
 
 // const Article = styled.div`
 //     margin: 2%;
@@ -12,7 +14,19 @@ import React from 'react'
 //     font-family: 'Roboto', sans-serif;
 // `;
 
-function ArticleCard({ articleData }) {
+
+function ArticleCard(props) {
+    const { article } = props;
+
+    const EachArticle = ({ info }) => (
+        <Article className='article'>
+            <h3 className='title'>{info.article_name}</h3>
+            <br />
+            <Link to={info.article_url}>{info.article_url}</Link> 
+            <br />
+            <p>{info.category_id}</p>
+        </Article>
+    )
 
     return (
 

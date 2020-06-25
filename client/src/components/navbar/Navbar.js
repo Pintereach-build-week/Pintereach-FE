@@ -6,7 +6,7 @@ import { connect } from "react-redux"
 export const Navbar = () => {
     return (
         <div>
-            <nav>
+            <nav style={{display: 'flex', justifyContent:'space-between', alignItems: 'center'}}>
                 <h1>Pintreach</h1>
                 <Link to='/'>Home</Link>
                 <Link to='/saved-list'>Saved List</Link>

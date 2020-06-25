@@ -6,11 +6,12 @@ import ArticleList from "../articles/ArticleList";
 // import { SavedArticles } from "../articles/SavedArticles"
 
 
-export const Home = () => {
+const Home = () => {
     return (
         <div>
-         <p>Welcome</p> 
-         <ArticleList />
+            <ArticleList /> 
         </div>
     )
 }
+
+export default Home;
