@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Article = styled.div`
     margin: 2%;
@@ -19,9 +19,9 @@ function ArticleCard(props) {
         <Article className='article'>
             <h3 className='title'>{info.article_name}</h3>
             <br />
-            {/* <Link to={info.article_url}>{info.article_url}</Link> 
+            <Link to={info.article_url}>{info.article_url}</Link> 
             <br />
-            <p>{info.category_id}</p> */}
+            <p>{info.category_id}</p>
         </Article>
     )
 
