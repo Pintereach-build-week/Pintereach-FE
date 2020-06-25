@@ -6,22 +6,20 @@ function ArticleList() {
     const [articleData, setArticleData] = useState([]);
 
     useEffect(() => {
-        axios
-            .get('https://pintereach-web30.herokuapp.com/articles')
-            .then(response => {
-                console.log(response)
-                setArticleData(response)
-            })
-            .catch(error =>  {
-                // debugger
-            })
-    }, [])
+            axios
+                .get('http://pintereach-web30.herokuapp.com/articles')
+                .then(response => {
+                    console.log(response.data)
+                    setArticleData(response.data)
+                })
+                .catch(error =>  {
+                    console.log(error);
+                })
+    }, []);
 
     return (
         <div>
-            <div>
-                <ArticleCard article={articleData} />
-            </div>
+            <ArticleCard article={articleData} />
         </div>
     )
 }
