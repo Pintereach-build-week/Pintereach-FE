@@ -9,7 +9,6 @@ import ArticleList from "../articles/ArticleList";
 const Home = () => {
     return (
         <div>
-            <p>Welcome</p>
             <ArticleList /> 
         </div>
     )
