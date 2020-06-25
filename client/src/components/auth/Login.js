@@ -27,7 +27,7 @@ const initialFormErrors = {
 const initialDisabled = true
 
 
-export default function Login() {
+function Login() {
     const [user, setUsers] = useState([])
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors) 
@@ -131,6 +131,10 @@ const Button = styled.button`
   padding: 1% 4%;
   border: 1px solid rgba(var(--ca6,219,219,219),1);
   border-radius: 3px;
+
+  &:hover {
+    background-color: black;
+  }
 `;
 
 const Form = styled.form`
@@ -152,3 +156,5 @@ const Error = styled.div`
     font-size: .75rem;
     color: #FF5733;
 `;
+
+export default Login;
