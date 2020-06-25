@@ -8,19 +8,25 @@ function ArticleList() {
     useEffect(() => {
         axios
             .get('https://pintereach-web30.herokuapp.com/articles')
-            .then(response => {
-                console.log(response)
-                setArticleData(response)
+            .then(response => { 
+                console.log('response',response.data)
+                setArticleData(response.data)
+               
             })
             .catch(error =>  {
-                // debugger
+                
             })
     }, [])
 
     return (
         <div>
             <div>
-                <ArticleCard article={articleData} />
+               
+            {
+                articleData.map(ar => {
+                    return <ArticleCard key={ar.id} articleData={articleData} />
+                })
+            }
             </div>
         </div>
     )
