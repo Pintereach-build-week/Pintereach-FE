@@ -2,14 +2,15 @@ import React from "react"
 
 //Components
 // import {Category} from "../category/Category"
-// import {ArticleList} from "../articles/ArticleList"
+import ArticleList from "../articles/ArticleList";
 // import { SavedArticles } from "../articles/SavedArticles"
 
 
 export const Home = () => {
     return (
         <div>
-         <p>Home</p> 
+         <p>Welcome</p> 
+         <ArticleList />
         </div>
     )
 }

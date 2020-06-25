@@ -1,17 +1,27 @@
-import React, { useState } from "react"
-import { ArticleCard } from "./ArticleCard"
-import dummyData from "./dummy-data"
+import React, { useState, useEffect } from 'react';
+import ArticleCard from './ArticleCard';
+import axios from 'axios';
 
-export const ArticleList = () => { 
-    const [articleData] = useState(dummyData);
+function ArticleList() {
+    const [articleData, setArticleData] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get('https://pintereach-web30.herokuapp.com/articles')
+            .then(response => {
+                console.log(response)
+                setArticleData(response)
+            })
+            .catch(error =>  {
+                // debugger
+            })
+    }, [])
 
     return (
-        <div className="article-list">
-            {articleData.map(article => (
-                <ArticleCard 
-                    key = {article.article_name} article={article}
-                />
-            ))}
+        <div>
+            <div>
+                <ArticleCard article={articleData} />
+            </div>
         </div>
     )
 }
