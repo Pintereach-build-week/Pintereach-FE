@@ -1,9 +1,0 @@
-export const GET_COMMENTS = 'GET_COMMENTS'
-export const ADD_COMMENT = 'ADD_COMMENT';
-export const DELETE_COMMENT = 'DELETE_COMMENT'
-export const SET_CURRENT = 'SET_CURRENT'
-export const CLEAR_CURRENT = 'CLEAR_CURRENT'
-export const UPDATE_COMMENT = 'UPDATE_COMMENT'
-export const CLEAR_COMMENT = 'CLEAR_COMMENT'
-export const COMMENT_ERROR = 'COMMENT_ERROR';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
