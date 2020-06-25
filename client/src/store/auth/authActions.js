@@ -16,7 +16,7 @@ export const login = (credentials, history) => {
   return dispatch => {
     dispatch({ type: LOGIN_START });
     axios
-      .post("https://pintereach-web30.herokuapp.com/users/login", credentials)
+      .post("https://cors-anywhere.herokuapp.com/https://pintereach-web30.herokuapp.com/users/login", credentials)
       .then(res => {
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
         localStorage.setItem("token", res.data.token);
@@ -44,7 +44,7 @@ export const register = (user, history) => dispatch => {
   dispatch({ type: REGISTER_START });
 
   axios
-    .post("https://pintereach-web30.herokuapp.com/users/register", user)
+    .post("https://cors-anywhere.herokuapp.com/https://pintereach-web30.herokuapp.com/users/register", user)
     .then(res => {
       dispatch({ type: REGISTER_SUCCESS });
       history.push("/login");

@@ -9,7 +9,7 @@ import FormikRegister from './components/auth/Register'
 
 
 //Routing
-// import PrivateRoute from './utils/PrivateRoute'
+import PrivateRoute from './utils/PrivateRoute'
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom"
 
 function App() {
@@ -25,7 +25,10 @@ function App() {
           <Route path="/register" component={FormikRegister} />
 
           {/*---Private Routes---*/}
-          <Route path="/" component={Home} />
+
+          <PrivateRoute exact path="/" component={Home} />
+
+
         </Switch>
       </Router>
     </div>

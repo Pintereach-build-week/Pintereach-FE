@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { logout } from "../../store/auth/authActions"
+import { connect } from "react-redux"
 
 export const Navbar = () => {
     return (
@@ -10,8 +12,18 @@ export const Navbar = () => {
                 <Link to='/saved-list'>Saved List</Link>
                 <Link to='/register'>Register</Link>
                 <Link to='/login'>Login In</Link>
-                <Link to='/logout' >Log Out</Link>
+                <Link to='/logout' onClick={() => logout()} >Log Out</Link>
             </nav>
         </div>
     )
 }
+
+const mapPropsToState = state => {
+    return {
+      isAuth: state.auth.isAuth,
+    };
+  };
+  export default connect(
+    mapPropsToState,
+    { logout },
+  )(Navbar);
