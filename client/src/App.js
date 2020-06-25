@@ -16,7 +16,7 @@ function App() {
 
 
   return (
-    <>
+    
       <Router>
         <Navbar />
         <Switch>
@@ -28,7 +28,8 @@ function App() {
           <PrivateRoute exact path="/home" components={Home} />
         </Switch>
       </Router>
-    </>
+    
+
   );
 }
 

@@ -87,6 +87,7 @@ export default connect(
 )(FormikSignUpForm);
 
 
+
 // Styling 
 // const Error = styled.div`
 //     color: #FF5733;
@@ -119,3 +120,4 @@ export default connect(
  
  
 //     `;
+
