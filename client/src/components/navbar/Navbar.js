@@ -4,7 +4,7 @@ export const Navbar = () => {
     return (
         <div>
             <nav>
-                <h1>Pintreach</h1>
+                <h1>Pintereach</h1>
                 <ul>
                     <li>Reading List</li>
                     <li>My Profile</li>
