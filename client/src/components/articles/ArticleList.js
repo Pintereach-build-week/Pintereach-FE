@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { ArticleCard } from './ArticleCard'
-import dummyData from './dummy-data'
+import React, { useState } from "react"
+import { ArticleCard } from "./ArticleCard"
+import dummyData from "./dummy-data"
 
 export const ArticleList = () => { 
-    const [articleData, setArticleData] = useState(dummyData);
+    const [articleData] = useState(dummyData);
 
     return (
         <div className="article-list">
