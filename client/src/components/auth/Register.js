@@ -199,8 +199,16 @@ const Button = styled.button`
     margin: 2%;
     border: 1px solid #DBDBDB;
     border-radius: 3px;
+ 
+ 
+
     `;
+
 
 const CalltoAction = styled.h4`
 color:#FF5733;
 `;
+
+
+
+
