@@ -119,3 +119,76 @@ export default connect(
  
  
 //     `;
+//     return (
+//     <div>     
+//         <Form onSubmit={onSubmit}>
+//             <div>
+//                 <h1>Register Here</h1>
+//                 <CalltoAction><h4>Please fill out form below</h4></CalltoAction>
+//                 <div className="error">
+//                     <Error>{errors.name}</Error>
+//                     <Error>{errors.username}</Error>
+//                     <Error>{errors.email}</Error>
+//                     <Error>{errors.password}</Error>
+//                 </div>
+//                 <div className="registerFormInputs">
+//                     <label> Name:&nbsp;
+//                         <Input
+//                         id="name"
+//                         name="name"
+//                         type="text"
+//                         value={formState.name}
+//                         onChange={onInputChange}
+//                         placeholder="Enter your name here"
+//                         />
+//                     </label>
+//                     <br/>
+//                     <br/>
+//                     <label>Username:&nbsp;
+//                         <Input 
+//                         type="text"
+//                         name="username"
+//                         value={formState.username}
+//                         onChange={onInputChange}
+//                         placeholder="Enter username here"
+//                         />
+//                     </label>
+//                     <br/>
+//                     <br/>
+//                     <label htmlFor="emailInput">Email:&nbsp;
+//                         <Input
+//                             id="emailInput"
+//                             type="email"
+//                             name="email"
+//                             value={formState.email}
+//                             onChange={onInputChange}
+//                             placeholder="Enter email here"
+//                             />
+//                     </label>
+//                     <br/>
+//                     <br/>
+//                     <label htmlFor="passwordInput">Password:&nbsp;
+//                         <Input
+//                             type="password"
+//                             name="password"
+//                             value={formState.password}
+//                             onChange={onInputChange}
+//                             placeholder="Enter password here"
+//                             />
+//                     </label>
+//                 </div>
+//                 <Button disabled={buttonDisabled}
+//                 type="submit"
+//                 >Register Now!</Button>
+//             </div>
+//         </Form>
+       
+//     <pre>{JSON.stringify(post, null)}</pre>
+//     </div>
+//     );
+// };    
+
+
+
+
+
