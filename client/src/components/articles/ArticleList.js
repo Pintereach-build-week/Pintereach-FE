@@ -7,7 +7,7 @@ function ArticleList() {
 
     useEffect(() => {
             axios
-                .get('http://pintereach-web30.herokuapp.com/articles')
+                .get('https://pintereach-web30.herokuapp.com/articles')
                 .then(response => {
                     console.log(response.data)
                     setArticleData(response.data)
