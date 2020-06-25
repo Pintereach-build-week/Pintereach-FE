@@ -1,28 +1,39 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
+// import { Link } from "react-router-dom"
 
-export const ArticleCard = ({article}) => {
-    const { article_name, article_content, category_id } = article;
-    
+const Article = styled.div`
+    margin: 2%;
+    padding: 4%;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+    border-radius: 3px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+`;
+
+function ArticleCard(props) {
+    const { article } = props;
+
+    const EachArticle = ({ info }) => (
+        <Article className='article'>
+            <h3 className='title'>{info.article_name}</h3>
+            <br />
+            {/* <Link to={info.article_url}>{info.article_url}</Link> 
+            <br />
+            <p>{info.category_id}</p> */}
+        </Article>
+    )
+
     return (
         <div className="article-card">
-            <h2>{article_name}</h2>
-            <div className="article-content">
-                <p>{article_content}</p>
-            </div>
-            <div className="article-category">
-                <Category>{category_id}</Category>
-            </div>
+            {
+                article.map(ar => {
+                    return <EachArticle key={ar.id} info={ar} />
+                })
+            }
         </div>
     )
 }
-
-const Category = styled.p `
-    border: 1px solid #FF5733;
-    border-radius: 3px;
-    padding: 1%;
-    width: 20%;
-    text-align: center;
-`;
 
 export default ArticleCard;
