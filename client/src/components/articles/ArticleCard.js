@@ -1,5 +1,9 @@
 import React from 'react'
+
 import styled from 'styled-components'
+
+import { Link } from "react-router-dom"
+
 
 function ArticleCard(props) {
     const { article } = props;
@@ -15,12 +19,10 @@ function ArticleCard(props) {
     )
 
     return (
+
         <div className="article-card">
-            {
-                article.map(ar => {
-                    return <EachArticle key={ar.id} info={ar} />
-                })
-            }
+            <h3 className='title'>{articleData.article_name}</h3>
+            <p>{articleData.article_url}</p>
         </div>
     )
 }

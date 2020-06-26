@@ -6,6 +6,7 @@ function ArticleList() {
     const [articleData, setArticleData] = useState([]);
 
     useEffect(() => {
+
             axios
                 .get('https://pintereach-web30.herokuapp.com/articles')
                 .then(response => {
@@ -20,6 +21,7 @@ function ArticleList() {
     return (
         <div>
             <ArticleCard article={articleData} />
+
         </div>
     )
 }
