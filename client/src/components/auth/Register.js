@@ -172,7 +172,7 @@ export default function Register() {
             </div>
         </Form>
        
-    <pre>{JSON.stringify(post, null)}</pre>
+    <pre>{JSON.stringify(post, null, 2)}</pre>
     </div>
     );
 };    
@@ -199,6 +199,7 @@ const Form = styled.form`
     font-family: 'Roboto', sans-serif;
     padding: 3% 0;
     margin: 3% 0 3% 15%;
+    width: 70%;
 `;
 
 const Input = styled.input`

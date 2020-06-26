@@ -25,14 +25,18 @@ function ArticleCardHH(props) {
 
 
 
- const Article = styled.div `
-     border: 1px solid #FF5733;
-     border-radius: 3px;
-     padding: 1%;
-     margin: 3%;
-     width: 20%;
-     text-align: center;
- `; 
+const Article = styled.div `
+    border: 1px solid #FF5733;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 3% auto;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`; 
 
 
 export default ArticleCardHH;
