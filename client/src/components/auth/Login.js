@@ -1,47 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-// import styled from "styled-components";
+import styled from "styled-components";
 import { login } from "../../store/auth/authActions";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
-
-
+import FormStyling from './FormStyling'
 
 
 const Login = ({ errors, touched, ...props }) => {
   return(
    
-<div>
+    <FormStyling>
         <Form>
-          <label>
-            Username
-            <Field type="text" 
-            name="username" 
-            placeholder="Username" />
-          </label>
-          {touched.username && errors.username && (
-            <p className="error">{errors.username}</p>
-          )}
-
-          <label>
-            Password
-            <Field
-             type="password"
-              name="password"
-               placeholder="Password" />
-          </label>
-          {touched.password && errors.password && (
-            <p className="error">{errors.password}</p>
-          )}
-
-          <div><button type="submit">{props.isLoading ? "..." : "Login "}</button></div>
+          <h2>Pintereach Log In</h2>
+          <div style={{padding:'2% 0'}}>
+            <label>
+              <Field type="text" 
+              name="username" 
+              placeholder="Username" />
+            </label>
+            <div style={{paddingTop: '1%'}}>
+              {touched.username && errors.username && (
+                <Error className="error">{errors.username}</Error>
+              )}
+            </div>
+          </div>
+          
+          <div style={{padding:'2% 0'}}>
+            <label>
+              <Field
+              type="password"
+                name="password"
+                placeholder="Password" />
+            </label>
+            <div style={{paddingTop: '1%'}}>
+              {touched.password && errors.password && (
+                <Error className="error">{errors.password}</Error>
+              )}
+            </div>
+          </div>
+        
+          <div style={{padding:'2% 0'}}><Button type="submit">{props.isLoading ? "..." : "Login "}</Button></div>
 
         </Form>
-        <h3>
-          Don't have an account yet? <Link to="/register">Sign Up</Link> here.{" "}
-        </h3> 
-      </div>
+        <h4>
+          Don't have an account yet? <Link to="/register" >Sign Up</Link> here.{" "}
+        </h4> 
+    </FormStyling>
     
   );
 };
@@ -81,15 +87,15 @@ export default connect(
 
 
 
-// const Button = styled.button`
-//   color: white;
-//   background-color: #FF5733;
-//   padding: 1% 4%;
-//   border: 1px solid rgba(var(--ca6,219,219,219),1);
-//   border-radius: 3px;
-// `;
+const Button = styled.button`
+  color: white;
+  background-color: #FF5733;
+  padding: 1% 4%;
+  border: 1px solid rgba(var(--ca6,219,219,219),1);
+  border-radius: 3px;
+`;
 
-// const Form = styled.form`
+// const LoginStyling = styled.form`
 //   margin: 5% 15%;
 //   padding: 3% 0;
 //   border: 1px solid rgba(var(--ca6,219,219,219),1);
@@ -104,7 +110,7 @@ export default connect(
 //     padding: 1%;
 // `;
 
-// const Error = styled.div`
-//     font-size: .75rem;
-//     color: #FF5733;
-// `;
+const Error = styled.div`
+    font-size: .75rem;
+    color: #FF5733;
+`;
